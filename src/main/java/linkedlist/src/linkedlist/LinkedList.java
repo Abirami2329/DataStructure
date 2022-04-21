@@ -1,6 +1,5 @@
 package linkedlist;
 import java.util.Scanner;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 public class LinkedList {
 	static LinkedList llist = new LinkedList();
