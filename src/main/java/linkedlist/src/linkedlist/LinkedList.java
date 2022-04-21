@@ -1,5 +1,6 @@
 package linkedlist;
 import java.util.Scanner;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 public class LinkedList {
 	static LinkedList llist = new LinkedList();
@@ -90,10 +91,16 @@ public class LinkedList {
 	  public void printList() {
 	    Node tnode = head;
 	    while (tnode != null) {
-	    	logger.info(tnode.data + " ");
+	    	logger.log(Level.SEVERE,tnode.data + " ");
 	      tnode = tnode.next;
 	    }
 
+	  }
+	  public static int getInputValue() {
+		  Scanner sc= new Scanner(System.in);
+		  logger.info("\nEnter Number: ");
+		  int inputValue= sc.nextInt();
+		  return inputValue;
 	  }
 	  public static void showInsertOption() {
 		  logger.info("\n1.INSERT AT BEGINNING\n2.INSERT AT END\n3.INSERT AFTER PARTICULAR VALUE");
@@ -102,15 +109,13 @@ public class LinkedList {
 		  int choice= sc.nextInt();
 		  switch(choice) {
 			case 1:
-				logger.info("\nEnter Number: ");
-				int inputBeginValue= sc.nextInt();
+				int inputBeginValue = getInputValue();
 				llist.insertAtBeginning(inputBeginValue);
 				logger.info("\nINSERTED SUCCESSFULLY IN BEGINNING");
 				showOption();
 				break;
 			case 2:
-				logger.info("\nEnter Number: ");
-				int inputEndValue= sc.nextInt();
+				int inputEndValue = getInputValue();
 				llist.insertAtBeginning(inputEndValue);
 				logger.info("\nINSERTED SUCCESSFULLY IN END");
 				showOption();
@@ -118,8 +123,7 @@ public class LinkedList {
 			case 3:
 				logger.info("\nEnter the index of the exsiting numbers: ");
 				int inputSearchValue= sc.nextInt();
-				logger.info("\nEnter Number: ");
-				int inputIntValue= sc.nextInt();
+				int inputIntValue = getInputValue();
 				llist.insertAfter(llist.head.next, inputIntValue);
 				logger.info("\nINSERTED SUCCESSFULLY AFTER " + inputSearchValue);
 				showOption();
@@ -153,9 +157,9 @@ public class LinkedList {
 				logger.info("\nEnter Search Number: ");
 				int itemToFind =  sc.nextInt();
 			    if (llist.search(llist.head, itemToFind))
-			      logger.info(itemToFind + " is found\n");
+			      logger.log(Level.SEVERE,itemToFind + " is found\n");
 			    else
-			      logger.info(itemToFind + " is not found\n");
+			      logger.log(Level.SEVERE,itemToFind + " is not found\n");
 			    showOption();
 				break;
 			case 4:
