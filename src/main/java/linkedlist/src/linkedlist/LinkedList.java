@@ -41,7 +41,6 @@ public class LinkedList {
 	      last = last.next;
 
 	    last.next = newNode;
-	    return;
 	  }
 	  void deleteNode(int position) {
 	    if (head == null) 
@@ -73,9 +72,7 @@ public class LinkedList {
 	    Node index = null;
 	    int temp;
 
-	    if (head == null) {
-	      return;
-	    } else {
+	    if (head != null) {
 	      while (current != null) {
 	        index = current.next;
 
