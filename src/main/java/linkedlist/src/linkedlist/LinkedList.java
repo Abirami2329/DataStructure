@@ -125,6 +125,8 @@ public class LinkedList {
 				System.out.print("\nINSERTED SUCCESSFULLY AFTER " + inputSearchValue);
 				showOption();
 				break;
+            default:
+                break;
 			}
 		  
 		  }
@@ -167,6 +169,8 @@ public class LinkedList {
 				llist.printList();
 				showOption();
 				break;
+            default:
+                break;
 			}
 			
 	  }
