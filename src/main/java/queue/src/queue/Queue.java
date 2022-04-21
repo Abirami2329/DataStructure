@@ -3,41 +3,38 @@ package queue;
 import java.util.Scanner;
 
 public class Queue {
-	private static int front, rear, capacity; 
-    private static int queue[];
+	private static int front = 0;
+	private static int rear = 0;
+	private static int capacity; 
+    private static int[] queueList;
 	static int queueSize = 0;
 	static Queue q = new Queue(100);
    
-    Queue(int size) { 
-        front = rear = 0; 
+    Queue(int size) {  
         capacity = size; 
-        queue = new int[capacity]; 
+        queueList = new int[capacity]; 
     } 
     void queueEnqueue(int item)  { 
         if (capacity == rear) {
             System.out.printf("\nQueue is full\n"); 
-            return; 
         } 
-        else { 
-            queue[rear] = item; 
+        else {
+        	queueList[rear] = item; 
             rear++; 
         } 
-        return; 
     } 
     void queueDequeue()  { 
         if (front == rear) { 
             System.out.printf("\nQueue is empty\n"); 
-            return; 
         } 
         else { 
             for (int i = 0; i < rear - 1; i++) { 
-                queue[i] = queue[i + 1]; 
+            	queueList[i] = queueList[i + 1]; 
             } 
             if (rear < capacity) 
-                queue[rear] = 0; 
+            	queueList[rear] = 0; 
             rear--; 
-        } 
-        return; 
+        }
     } 
     void queueDisplay() 
     { 
@@ -47,9 +44,8 @@ public class Queue {
             return; 
         } 
         for (i = front; i < rear; i++) { 
-            System.out.printf(" %d <= ", queue[i]); 
+            System.out.printf(" %d <= ", queueList[i]); 
         } 
-        return; 
     } 
    
     void queueFront() 
@@ -58,8 +54,7 @@ public class Queue {
             System.out.printf("Queue is Empty\n"); 
             return; 
         } 
-        System.out.printf("\nFront Element of the queue: %d", queue[front]); 
-        return; 
+        System.out.printf("\nFront Element of the queue: %d", queueList[front]); 
     } 
     public static void showOption() {
 		  System.out.println("\n1.ENQUEUE\n2.DEQUEUE\n3.FRONT ELEMENT OF QUEUE\n4.SHOW QUEUE LIST");
@@ -85,6 +80,8 @@ public class Queue {
 			      System.out.print("Elements present in Queue :");
 			        q.queueDisplay();
 				  showOption();
+				break;
+			default:
 				break;
 			}
     }
