@@ -1,7 +1,10 @@
 package linkedlist;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class LinkedList {
 	static LinkedList llist = new LinkedList();
+	static Logger logger = Logger.getLogger(LinkedList.class.getName());
 	Node head;
 	  class Node {
 	    int data;
@@ -18,8 +21,8 @@ public class LinkedList {
 	  }
 	  public void insertAfter(Node prevNode, int newData) {
 	    if (prevNode == null) {
-	      System.out.println("The given previous node cannot be null");
-	      return;
+	    	logger.info("The given previous node cannot be null");
+	    	return;
 	    }
 	    Node newNode = new Node(newData);
 	    newNode.next = prevNode.next;
@@ -88,38 +91,38 @@ public class LinkedList {
 	  public void printList() {
 	    Node tnode = head;
 	    while (tnode != null) {
-	      System.out.print(tnode.data + " ");
+	    	logger.info(tnode.data + " ");
 	      tnode = tnode.next;
 	    }
 
 	  }
 	  public static void showInsertOption() {
-		  System.out.print("\n1.INSERT AT BEGINNING\n2.INSERT AT END\n3.INSERT AFTER PARTICULAR VALUE");
+		  logger.info("\n1.INSERT AT BEGINNING\n2.INSERT AT END\n3.INSERT AFTER PARTICULAR VALUE");
 		  Scanner sc= new Scanner(System.in);
-		  System.out.print("\nEnter your choice: ");
+		  logger.info("\nEnter your choice: ");
 		  int choice= sc.nextInt();
 		  switch(choice) {
 			case 1:
-				System.out.println("\nEnter Number: ");
+				logger.info("\nEnter Number: ");
 				int inputBeginValue= sc.nextInt();
 				llist.insertAtBeginning(inputBeginValue);
-				System.out.print("\nINSERTED SUCCESSFULLY IN BEGINNING");
+				logger.info("\nINSERTED SUCCESSFULLY IN BEGINNING");
 				showOption();
 				break;
 			case 2:
-				System.out.println("\nEnter Number: ");
+				logger.info("\nEnter Number: ");
 				int inputEndValue= sc.nextInt();
 				llist.insertAtBeginning(inputEndValue);
-				System.out.print("\nINSERTED SUCCESSFULLY IN END");
+				logger.info("\nINSERTED SUCCESSFULLY IN END");
 				showOption();
 				break;
 			case 3:
-				System.out.println("\nEnter the index of the exsiting numbers: ");
+				logger.info("\nEnter the index of the exsiting numbers: ");
 				int inputSearchValue= sc.nextInt();
-				System.out.println("\nEnter Number: ");
+				logger.info("\nEnter Number: ");
 				int inputIntValue= sc.nextInt();
 				llist.insertAfter(llist.head.next, inputIntValue);
-				System.out.print("\nINSERTED SUCCESSFULLY AFTER " + inputSearchValue);
+				logger.info("\nINSERTED SUCCESSFULLY AFTER " + inputSearchValue);
 				showOption();
 				break;
             default:
@@ -128,37 +131,37 @@ public class LinkedList {
 		  
 		  }
 	  public static void showOption() {
-		  System.out.println("\n1.INSERT\n2.DELETE\n3.SEARCH\n4.SORT\n5.SHOWlIST");
+		  logger.info("\n1.INSERT\n2.DELETE\n3.SEARCH\n4.SORT\n5.SHOWlIST");
 			Scanner sc= new Scanner(System.in);
-			System.out.println("\nEnter your choice: ");
+			logger.info("\nEnter your choice: ");
 			int choice= sc.nextInt();
 			switch(choice) {
 			case 1:
 				showInsertOption();
 				break;
 			case 2:
-				 System.out.println("\nBefore deleting an element: ");
+				 logger.info("\nBefore deleting an element: ");
 				 llist.printList();
-				 System.out.println("\nEnter index value of the Number: ");
+				 logger.info("\nEnter index value of the Number: ");
 				int inputDeleteValue= sc.nextInt();
 				llist.deleteNode(inputDeleteValue);
-				System.out.println("\nAfter deleting an element: ");
+				logger.info("\nAfter deleting an element: ");
 				 llist.printList();
-				 System.out.print("\nDELETED SUCCESSFULLY");
+				 logger.info("\nDELETED SUCCESSFULLY");
 				 showOption();
 				break;
 			case 3:
-				System.out.println("\nEnter Search Number: ");
+				logger.info("\nEnter Search Number: ");
 				int itemToFind =  sc.nextInt();
 			    if (llist.search(llist.head, itemToFind))
-			      System.out.println(itemToFind + " is found\n");
+			      logger.info(itemToFind + " is found\n");
 			    else
-			      System.out.println(itemToFind + " is not found\n");
+			      logger.info(itemToFind + " is not found\n");
 			    showOption();
 				break;
 			case 4:
 				 llist.sortLinkedList(llist.head);
-				    System.out.println("\nSorted List: ");
+				    logger.info("\nSorted List: ");
 				    llist.printList();
 				    showOption();
 				break;
@@ -172,21 +175,21 @@ public class LinkedList {
 			
 	  }
 	  public static void createList() {
-		  System.out.println("\nEnter the size of linked list");
+		  logger.info("\nEnter the size of linked list");
 		  Scanner scn= new Scanner(System.in);
 		  int sizeOfLinkedList =  scn.nextInt();
 		  for(int i = 0; i < sizeOfLinkedList; i++) {
-			  System.out.println("\nEnter the Value");
+			  logger.info("\nEnter the Value");
 			  Scanner scr= new Scanner(System.in);
 			  int linkedListValue =  scr.nextInt();
 			  llist.insertAtEnd(linkedListValue);
 		  }
-		  System.out.print("\nCREATED SUCCESSFULLY");
+		  logger.info("\nCREATED SUCCESSFULLY");
 		  showOption();
 		  }
 
 	public static void main(String[] args) {
-		System.out.println("LINKED LIST");
+		logger.info("LINKED LIST");
 		createList();
 	  }
 	}
