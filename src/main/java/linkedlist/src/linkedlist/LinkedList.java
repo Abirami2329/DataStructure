@@ -14,33 +14,33 @@ public class LinkedList {
 	      next = null;
 	    }
 	  }
-	  public void insertAtBeginning(int new_data) {
-	    Node new_node = new Node(new_data);
-	    new_node.next = head;
-	    head = new_node;
+	  public void insertAtBeginning(int newData) {
+	    Node newNode = new Node(newData);
+	    newNode.next = head;
+	    head = newNode;
 	  }
-	  public void insertAfter(Node prev_node, int new_data) {
-	    if (prev_node == null) {
+	  public void insertAfter(Node prevNode, int newData) {
+	    if (prevNode == null) {
 	      System.out.println("The given previous node cannot be null");
 	      return;
 	    }
-	    Node new_node = new Node(new_data);
-	    new_node.next = prev_node.next;
-	    prev_node.next = new_node;
+	    Node newNode = new Node(newData);
+	    newNode.next = prevNode.next;
+	    prevNode.next = newNode;
 	  }
-	  public void insertAtEnd(int new_data) {
-	    Node new_node = new Node(new_data);
+	  public void insertAtEnd(int newData) {
+	    Node newNode = new Node(newData);
 
 	    if (head == null) {
-	      head = new Node(new_data);
+	      head = new Node(newData);
 	      return;
 	    }
-	    new_node.next = null;
+	    newNode.next = null;
 	    Node last = head;
 	    while (last.next != null)
 	      last = last.next;
 
-	    last.next = new_node;
+	    last.next = newNode;
 	    return;
 	  }
 	  void deleteNode(int position) {
@@ -153,11 +153,11 @@ public class LinkedList {
 				break;
 			case 3:
 				System.out.println("\nEnter Search Number: ");
-				int item_to_find =  sc.nextInt();
-			    if (llist.search(llist.head, item_to_find))
-			      System.out.println(item_to_find + " is found\n");
+				int itemToFind =  sc.nextInt();
+			    if (llist.search(llist.head, itemToFind))
+			      System.out.println(itemToFind + " is found\n");
 			    else
-			      System.out.println(item_to_find + " is not found\n");
+			      System.out.println(itemToFind + " is not found\n");
 			    showOption();
 				break;
 			case 4:
