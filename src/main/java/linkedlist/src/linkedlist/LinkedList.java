@@ -99,8 +99,7 @@ public class LinkedList {
 	  public static int getInputValue() {
 		  Scanner sc= new Scanner(System.in);
 		  logger.info("\nEnter Number: ");
-		  int inputValue= sc.nextInt();
-		  return inputValue;
+		  return sc.nextInt();
 	  }
 	  public static void showInsertOption() {
 		  logger.info("\n1.INSERT AT BEGINNING\n2.INSERT AT END\n3.INSERT AFTER PARTICULAR VALUE");
