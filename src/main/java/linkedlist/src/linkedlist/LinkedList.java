@@ -1,14 +1,11 @@
 package linkedlist;
-
 import java.util.Scanner;
-
 public class LinkedList {
 	static LinkedList llist = new LinkedList();
 	Node head;
 	  class Node {
 	    int data;
 	    Node next;
-
 	    Node(int d) {
 	      data = d;
 	      next = null;
@@ -30,39 +27,41 @@ public class LinkedList {
 	  }
 	  public void insertAtEnd(int newData) {
 	    Node newNode = new Node(newData);
-
 	    if (head == null) {
 	      head = new Node(newData);
 	      return;
 	    }
 	    newNode.next = null;
 	    Node last = head;
-	    while (last.next != null)
-	      last = last.next;
-
+	    while (last.next != null) {
+            last = last.next;
+        }
 	    last.next = newNode;
 	  }
 	  void deleteNode(int position) {
-	    if (head == null) 
-	      return;
+	    if (head == null) {
+            return;
+        }
 	    Node temp = head;
 	    if (position == 0) {
 	      head = temp.next;
 	      return;
 	    }
-	    for (int i = 0; temp != null && i < position - 1; i++)
-	      temp = temp.next;
-	    if (temp == null || temp.next == null)
+	    for (int i = 0; temp != null && i < position - 1; i++) {
+            temp = temp.next;   
+        }
+	    if (temp == null || temp.next == null) {
 	      return;
+        }
 	    Node next = temp.next.next;
-
 	    temp.next = next;
 	  }
 	  boolean search(Node head, int key) {
 	    Node current = head;
 	    while (current != null) {
-	      if (current.data == key)
+	      if (current.data == key) {
 	        return true;
+          }
 	      current = current.next;
 	    }
 	    return false;
@@ -71,11 +70,9 @@ public class LinkedList {
 	    Node current = head;
 	    Node index = null;
 	    int temp;
-
 	    if (head != null) {
 	      while (current != null) {
 	        index = current.next;
-
 	        while (index != null) {
 	          if (current.data > index.data) {
 	            temp = current.data;
@@ -186,7 +183,6 @@ public class LinkedList {
 		  }
 		  System.out.print("\nCREATED SUCCESSFULLY");
 		  showOption();
-
 		  }
 
 	public static void main(String[] args) {
