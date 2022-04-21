@@ -6,7 +6,7 @@ public class Stack {
 	static Stack stk = new Stack();
 	static final int MAX = 1000;
     int top;
-    int a[] = new int[MAX];
+    int[] stackArray = new int[MAX];
  
     boolean isEmpty() {
         return (top < 0);
@@ -20,7 +20,7 @@ public class Stack {
             System.out.println("Stack Overflow");
             return false;
         } else {
-            a[++top] = x;
+        	stackArray[++top] = x;
             System.out.println(x + " pushed into stack");
             return true;
         }
@@ -32,8 +32,7 @@ public class Stack {
             return 0;
         }
         else {
-            int x = a[top--];
-            return x;
+           return stackArray[top--];
         }
     }
  
@@ -43,14 +42,13 @@ public class Stack {
             return 0;
         }
         else {
-            int x = a[top];
-            return x;
+            return stackArray[top];
         }
     }
     
     public void print() {
     for(int i = top;i>-1;i--){
-      System.out.print(" "+ a[i]);
+      System.out.print(" "+ stackArray[i]);
     }
     
   }
@@ -91,9 +89,11 @@ public class Stack {
 			      stk.print();
 				  showOption();
 				break;
+			default:
+				break;
 			}
     }
- public static void main(String args[])
+ public static void main(String[] args)
   {
 	 System.out.println("STACK");
 	 createStack();
