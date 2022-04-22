@@ -17,18 +17,18 @@ public class Stack {
  
     boolean push(int x) {
         if (top >= (MAX - 1)) {
-            System.out.println("Stack Overflow");
+            System.Out.println("Stack Overflow");
             return false;
         } else {
         	stackArray[++top] = x;
-            System.out.println(x + " pushed into stack");
+            System.Out.println(x + " pushed into stack");
             return true;
         }
     }
  
     public int pop() {
         if (top < 0) {
-            System.out.println("Stack Underflow");
+            System.Out.println("Stack Underflow");
             return 0;
         }
         else {
@@ -38,7 +38,7 @@ public class Stack {
  
     public int peek() {
         if (top < 0) {
-            System.out.println("Stack Underflow");
+            System.Out.println("Stack Underflow");
             return 0;
         }
         else {
@@ -48,44 +48,44 @@ public class Stack {
     
     public void print() {
     for(int i = top;i>-1;i--){
-      System.out.print(" "+ stackArray[i]);
+      System.Out.print(" "+ stackArray[i]);
     }
     
   }
     public static void createStack() {
-    	System.out.println("\nEnter the size of Stack");
+    	System.Out.println("\nEnter the size of Stack");
 		  Scanner scn= new Scanner(System.in);
 		  int sizeOfStack =  scn.nextInt();
 		  for(int i = 0; i < sizeOfStack; i++) {
-			  System.out.println("\nEnter the Value : ");
+			  System.Out.println("\nEnter the Value : ");
 			  int stackValue =  scn.nextInt();
 			  stk.push(stackValue);
 		  }
-		  System.out.print("\nCREATED SUCCESSFULLY");
+		  System.Out.print("\nCREATED SUCCESSFULLY");
 		  showOption();
     }
     public static void showOption() {
-		  System.out.println("\n1.PUSH\n2.POP\n3.SHOW TOP ELEMENT\n4.SHOW STACK ELEMENTS");
+		  System.Out.println("\n1.PUSH\n2.POP\n3.SHOW TOP ELEMENT\n4.SHOW STACK ELEMENTS");
 			Scanner sc= new Scanner(System.in);
-			System.out.println("\nEnter your choice: ");
+			System.Out.println("\nEnter your choice: ");
 			int choice= sc.nextInt();
 			switch(choice) {
 			case 1:
-				System.out.println("\nEnter Number: ");
+				System.Out.println("\nEnter Number: ");
 				int pushElement =  sc.nextInt();
 				stk.push(pushElement);
 				showOption();
 				break;
 			case 2:
-				System.out.println(stk.pop() + " Popped from stack");
+				System.Out.println(stk.pop() + " Popped from stack");
 				 showOption();
 				break;
 			case 3:
-				System.out.println("Top element is :" + stk.peek());
+				System.Out.println("Top element is :" + stk.peek());
 			    showOption();
 				break;
 			case 4:
-			      System.out.print("Elements present in stack :");
+			      System.Out.print("Elements present in stack :");
 			      stk.print();
 				  showOption();
 				break;
@@ -95,7 +95,7 @@ public class Stack {
     }
  public static void main(String[] args)
   {
-	 System.out.println("STACK");
+	 System.Out.println("STACK");
 	 createStack();
   }
 
