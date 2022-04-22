@@ -11,6 +11,7 @@ public class Queue {
 	static Queue q = new Queue(100);
    
     Queue(int size) {  
+	front = rear = 0;
         capacity = size; 
         queueList = new int[capacity]; 
     } 
@@ -22,6 +23,7 @@ public class Queue {
         	queueList[rear] = item; 
             rear++; 
         } 
+        return;
     } 
     void queueDequeue()  { 
         if (front == rear) { 
@@ -35,6 +37,7 @@ public class Queue {
             	queueList[rear] = 0; 
             rear--; 
         }
+	return;
     } 
     void queueDisplay() 
     { 
