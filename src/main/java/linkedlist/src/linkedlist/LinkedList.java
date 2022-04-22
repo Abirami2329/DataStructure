@@ -91,7 +91,7 @@ public class LinkedList {
 	  public void printList() {
 	    Node tnode = head;
 	    while (tnode != null) {
-	    	logger.log(Level.SEVERE,tnode.data + " ");
+	    	LOGGER.log(Level.SEVERE,tnode.data + " ");
 	      tnode = tnode.next;
 	    }
 
@@ -124,7 +124,7 @@ public class LinkedList {
 				int inputSearchValue= sc.nextInt();
 				int inputIntValue = getInputValue();
 				llist.insertAfter(llist.head.next, inputIntValue);
-				logger.info("\nINSERTED SUCCESSFULLY AFTER " + inputSearchValue);
+				LOGGER.info("\nINSERTED SUCCESSFULLY AFTER " + inputSearchValue);
 				showOption();
 				break;
             default:
@@ -156,9 +156,9 @@ public class LinkedList {
 				logger.info("\nEnter Search Number: ");
 				int itemToFind =  sc.nextInt();
 			    if (llist.search(llist.head, itemToFind))
-			      logger.log(Level.SEVERE,itemToFind + " is found\n");
+			      LOGGER.log(Level.SEVERE,itemToFind + " is found\n");
 			    else
-			      logger.log(Level.SEVERE,itemToFind + " is not found\n");
+			      LOGGER.log(Level.SEVERE,itemToFind + " is not found\n");
 			    showOption();
 				break;
 			case 4:
