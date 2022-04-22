@@ -16,7 +16,7 @@ public class Queue {
     } 
     void queueEnqueue(int item)  { 
         if (capacity == rear) {
-            System.out.printf("\nQueue is full\n"); 
+            System.out.println("\nQueue is full\n"); 
         } 
         else {
         	queueList[rear] = item; 
@@ -25,7 +25,7 @@ public class Queue {
     } 
     void queueDequeue()  { 
         if (front == rear) { 
-            System.out.printf("\nQueue is empty\n"); 
+            System.out.println("\nQueue is empty\n"); 
         } 
         else { 
             for (int i = 0; i < rear - 1; i++) { 
@@ -40,21 +40,21 @@ public class Queue {
     { 
         int i; 
         if (front == rear) { 
-            System.out.printf("Queue is Empty\n"); 
+            System.out.println("Queue is Empty\n"); 
             return; 
         } 
         for (i = front; i < rear; i++) { 
-            System.out.printf(" %d <= ", queueList[i]); 
+            System.out.println(" %d <= ", queueList[i]); 
         } 
     } 
    
     void queueFront() 
     { 
         if (front == rear) { 
-            System.out.printf("Queue is Empty\n"); 
+            System.out.println("Queue is Empty\n"); 
             return; 
         } 
-        System.out.printf("\nFront Element of the queue: %d", queueList[front]); 
+        System.out.println("\nFront Element of the queue: %d", queueList[front]); 
     } 
     public static void showOption() {
 		  System.out.println("\n1.ENQUEUE\n2.DEQUEUE\n3.FRONT ELEMENT OF QUEUE\n4.SHOW QUEUE LIST");
