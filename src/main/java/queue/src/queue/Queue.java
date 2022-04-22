@@ -18,18 +18,15 @@ public class Queue {
     void queueEnqueue(int item)  { 
         if (capacity == rear) {
             System.Out.println("\nQueue is full\n");
-            return;
         } 
         else {
         	queueList[rear] = item; 
                 rear++; 
         } 
-        return;
     } 
     void queueDequeue()  { 
         if (front == rear) { 
             System.Out.println("\nQueue is empty\n");
-	    return;
         } 
         else { 
             for (int i = 0; i < rear - 1; i++) { 
@@ -38,15 +35,13 @@ public class Queue {
             if (rear < capacity) 
             	queueList[rear] = 0; 
                 rear--; 
-        }
-	return;
+	}
     } 
     void queueDisplay() 
     { 
         int i; 
         if (front == rear) { 
-            System.Out.println("Queue is Empty\n"); 
-            return; 
+            System.Out.println("Queue is Empty\n");
         } 
         for (i = front; i < rear; i++) { 
             System.Out.println(" %d <= ", queueList[i]); 
