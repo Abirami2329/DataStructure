@@ -16,7 +16,7 @@ public class Queue {
     } 
     void queueEnqueue(int item)  { 
         if (capacity == rear) {
-            System.out.println("\nQueue is full\n"); 
+            System.Out.println("\nQueue is full\n"); 
         } 
         else {
         	queueList[rear] = item; 
@@ -25,7 +25,7 @@ public class Queue {
     } 
     void queueDequeue()  { 
         if (front == rear) { 
-            System.out.println("\nQueue is empty\n"); 
+            System.Out.println("\nQueue is empty\n"); 
         } 
         else { 
             for (int i = 0; i < rear - 1; i++) { 
@@ -40,30 +40,30 @@ public class Queue {
     { 
         int i; 
         if (front == rear) { 
-            System.out.println("Queue is Empty\n"); 
+            System.Out.println("Queue is Empty\n"); 
             return; 
         } 
         for (i = front; i < rear; i++) { 
-            System.out.println(" %d <= ", queueList[i]); 
+            System.Out.println(" %d <= ", queueList[i]); 
         } 
     } 
    
     void queueFront() 
     { 
         if (front == rear) { 
-            System.out.println("Queue is Empty\n"); 
+            System.Out.println("Queue is Empty\n"); 
             return; 
         } 
-        System.out.println("\nFront Element of the queue: %d", queueList[front]); 
+        System.Out.println("\nFront Element of the queue: %d", queueList[front]); 
     } 
     public static void showOption() {
-		  System.out.println("\n1.ENQUEUE\n2.DEQUEUE\n3.FRONT ELEMENT OF QUEUE\n4.SHOW QUEUE LIST");
+		  System.Out.println("\n1.ENQUEUE\n2.DEQUEUE\n3.FRONT ELEMENT OF QUEUE\n4.SHOW QUEUE LIST");
 			Scanner sc= new Scanner(System.in);
-			System.out.println("\nEnter your choice: ");
+			System.Out.println("\nEnter your choice: ");
 			int choice= sc.nextInt();
 			switch(choice) {
 			case 1:
-				System.out.println("\nEnter Number: ");
+				System.Out.println("\nEnter Number: ");
 				int enqueueElement =  sc.nextInt();
 				q.queueEnqueue(enqueueElement);
 				showOption();
@@ -77,7 +77,7 @@ public class Queue {
 			    showOption();
 				break;
 			case 4:
-			      System.out.print("Elements present in Queue :");
+			      System.Out.print("Elements present in Queue :");
 			        q.queueDisplay();
 				  showOption();
 				break;
@@ -86,21 +86,21 @@ public class Queue {
 			}
     }
     public static void createQueue() {
-    	System.out.println("\nEnter the size of queue");
+    	System.Out.println("\nEnter the size of queue");
 		  Scanner scn= new Scanner(System.in);
 		  queueSize = scn.nextInt();
 		  for(int i = 0; i < queueSize; i++) {
-			  System.out.println("\nEnter the Value : ");
+			  System.Out.println("\nEnter the Value : ");
 			  int queueValue =  scn.nextInt();
 			  q.queueEnqueue(queueValue); 
 			  
 		  }
-		  System.out.print("\nCREATED SUCCESSFULLY");
+		  System.Out.print("\nCREATED SUCCESSFULLY");
 		  showOption();
     }
 	
 	public static void main(String[] args) { 
-		System.out.println("QUEUE");
+		System.Out.println("QUEUE");
 		 createQueue();
     } 
 
