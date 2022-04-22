@@ -11,7 +11,6 @@ public class Queue {
 	static Queue q = new Queue(100);
    
     Queue(int size) {  
-	front = rear = 0;
         capacity = size; 
         queueList = new int[capacity]; 
     } 
